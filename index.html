@@ -46,10 +46,12 @@
     </div>
     <div class="hidden md:flex space-x-8">
         <a href="#about" class="hover:text-pink-400 transition">About</a>
+        <a href="#education" class="hover:text-pink-400 transition">Education</a>
         <a href="#projects" class="hover:text-pink-400 transition">Projects</a>
         <a href="#skills" class="hover:text-pink-400 transition">Skills</a>
-        <a href="#contact" class="hover:text-pink-400 transition">Contact</a>
         <a href="#beyond-coding" class="hover:text-pink-400 transition">Activities</a>
+        <a href="#contact" class="hover:text-pink-400 transition">Contact</a>
+       
     </div>
     <a href="#" class="bg-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-purple-700 transition">Download CV</a>
 </nav>
@@ -85,6 +87,69 @@
         </div>
     </div>
 </section>
+
+<!-- Education Section starting from here  -->
+<section id="education" class="py-32 px-6 bg-black/20 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto text-center mb-20">
+    <h2 class="text-5xl md:text-6xl font-extrabold">
+      My <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">Education</span>
+    </h2>
+    <p class="text-gray-400 mt-3 text-lg md:text-xl">Academic milestones that shaped my journey</p>
+  </div>
+
+  <div class="space-y-32 max-w-7xl mx-auto">
+    <!-- University Row -->
+    <div class="reveal-row flex flex-col md:flex-row items-center w-full">
+      <div class="scroll-item flex justify-center w-full">
+        <div class="glass flex flex-col md:flex-row items-center gap-8 bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl shadow-2xl p-10 md:p-16 hover:scale-105 transition-all w-full max-w-5xl">
+          <img src="./resource/fast_university.jpg" alt="FAST University" class="w-full md:w-1/3 h-72 object-cover rounded-xl shadow-lg">
+          <div class="flex-1 text-center md:text-left mt-6 md:mt-0">
+            <h3 class="text-3xl font-bold mb-2 text-purple-400">FAST University</h3>
+            <p class="text-gray-300 mb-1 text-lg">B.Sc. in Computer Science</p>
+            <p class="text-gray-400 mb-1">Result: CGPA 3.85 / 4.00</p>
+            <p class="text-gray-400 mb-1">Type: University Degree</p>
+            <p class="text-gray-400 text-lg">Duration: 2019 - 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- College Row -->
+    <div class="reveal-row flex flex-col md:flex-row-reverse items-center w-full">
+      <div class="scroll-item flex justify-center w-full">
+        <div class="glass flex flex-col md:flex-row items-center gap-8 bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl shadow-2xl p-10 md:p-16 hover:scale-105 transition-all w-full max-w-5xl">
+          <img src="./resource/college_image.jpg" alt="City College" class="w-full md:w-1/3 h-72 object-cover rounded-xl shadow-lg">
+          <div class="flex-1 text-center md:text-left mt-6 md:mt-0">
+            <h3 class="text-3xl font-bold mb-2 text-pink-400">City College</h3>
+            <p class="text-gray-300 mb-1 text-lg">Higher Secondary Certificate (HSC)</p>
+            <p class="text-gray-400 mb-1">Result: GPA 5.00 / 5.00</p>
+            <p class="text-gray-400 mb-1">Type: College</p>
+            <p class="text-gray-400 text-lg">Duration: 2017 - 2019</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- School Row -->
+    <div class="reveal-row flex flex-col md:flex-row items-center w-full">
+      <div class="scroll-item flex justify-center w-full">
+        <div class="glass flex flex-col md:flex-row items-center gap-8 bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl shadow-2xl p-10 md:p-16 hover:scale-105 transition-all w-full max-w-5xl">
+          <img src="./resource/school_image.jpg" alt="ABC High School" class="w-full md:w-1/3 h-72 object-cover rounded-xl shadow-lg">
+          <div class="flex-1 text-center md:text-left mt-6 md:mt-0">
+            <h3 class="text-3xl font-bold mb-2 text-purple-400">ABC High School</h3>
+            <p class="text-gray-300 mb-1 text-lg">Secondary School Certificate (SSC)</p>
+            <p class="text-gray-400 mb-1">Result: GPA 5.00 / 5.00</p>
+            <p class="text-gray-400 mb-1">Type: School</p>
+            <p class="text-gray-400 text-lg">Duration: 2015 - 2017</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</section>
+
+
 <!--project section is starting from here -->
 <section id="projects" class="py-20 px-6">
     <h2 class="text-center text-4xl font-bold mb-16">Featured Projects</h2>
@@ -112,6 +177,7 @@
         </div>
     </div>
 </section>
+
 <!--skill section is starting from here-->
 <section id="skills" class="py-20 bg-black/20">
     <div class="max-w-6xl mx-auto px-6">
@@ -136,6 +202,7 @@
         </div>
     </div>
 </section>
+
 <!--beyond coding section is starting from here-->
 <section id="beyond-coding" class="py-24 relative overflow-hidden bg-black/30">
     <div class="max-w-7xl mx-auto px-6 mb-20 text-center">
@@ -195,50 +262,10 @@
         </div>
 
     </div>
-
-    <script>
-        const revealRows = document.querySelectorAll('.reveal-row');
-        
-        function updateReveal() {
-            const viewportCenter = window.innerHeight / 2;
-
-            revealRows.forEach((row, index) => {
-                const rect = row.getBoundingClientRect();
-                const elementCenter = rect.top + rect.height / 2;
-                
-                // Calculate distance from center (0 = perfectly centered)
-                const distanceFromCenter = elementCenter - viewportCenter;
-                
-                // Normalizing movement: How far should it be when off-screen?
-                const strength = 1.2; 
-                const direction = (index === 1) ? 1 : -1; // Row 2 from Right, Others from Left
-                
-                // Clamp movement: It stops moving once it hits the center (0)
-                let moveX = distanceFromCenter * strength * direction;
-                
-                // Logic: If it's passed the center, keep it at 0 for a while or fade it
-                if ((direction === -1 && moveX > 0) || (direction === 1 && moveX < 0)) {
-                    moveX = 0;
-                }
-
-                // Opacity: Clear at center, faded at edges
-                const opacity = 1 - Math.min(1, Math.abs(distanceFromCenter) / (window.innerHeight * 0.6));
-
-                const item = row.querySelector('.scroll-item');
-                item.style.transform = `translate3d(${moveX}px, 0, 0)`;
-                item.style.opacity = opacity;
-                
-                // Subtle scale effect when centered
-                const scale = 1.1 - Math.min(0.1, Math.abs(distanceFromCenter) / 2000);
-                item.style.transform += ` scale(${scale})`;
-            });
-        }
-
-        window.addEventListener('scroll', updateReveal);
-        window.addEventListener('resize', updateReveal);
-        updateReveal(); // Initial call
-    </script>
+  
 </section>
+
+
 <!--contact section is starting from here -->
 <section id="contact" class="py-20 px-6 max-w-4xl mx-auto">
     <div class="glass p-10 text-center">
@@ -264,5 +291,47 @@
         once: false,
     });
 </script>
+<!--script for the sliding animation start from here -->
+<script>
+  const revealRows = document.querySelectorAll('.reveal-row');
+
+  function updateReveal() {
+    const viewportCenter = window.innerHeight / 2;
+
+    revealRows.forEach((row, index) => {
+      const rect = row.getBoundingClientRect();
+      const elementCenter = rect.top + rect.height / 2;
+      const distanceFromCenter = elementCenter - viewportCenter;
+
+      // Alternate directions: odd rows left, even rows right
+      const direction = index % 2 === 0 ? -1 : 1;
+
+      // Movement (translateX) proportional to distance from center
+      let moveX = distanceFromCenter * 1.2 * direction;
+
+      // Clamp movement: stops moving once it crosses the center
+      if ((direction === -1 && moveX > 0) || (direction === 1 && moveX < 0)) {
+        moveX = 0;
+      }
+
+      // Opacity: fully visible at center, fades at edges
+      const opacity = 1 - Math.min(1, Math.abs(distanceFromCenter) / (window.innerHeight * 0.6));
+
+      // Scale effect: subtle zoom when near center
+      const scale = 1 + (0.05 - Math.min(0.05, Math.abs(distanceFromCenter) / 2000));
+
+      const item = row.querySelector('.scroll-item');
+      if (item) {
+        item.style.transform = `translate3d(${moveX}px, 0, 0) scale(${scale})`;
+        item.style.opacity = opacity;
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateReveal);
+  window.addEventListener('resize', updateReveal);
+  updateReveal(); // Initial call
+</script>
+
 </body>
 </html>
