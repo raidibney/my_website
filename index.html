@@ -35,6 +35,54 @@
             flex-direction: column;
             justify-content: center;
         }
+
+        /* for changing the mode of the website  */
+        /* Light Mode Styles */
+.light-mode {
+    background: #f3f4f6 !important;
+    color: #111827 !important;
+}
+
+.light-mode .glass {
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode nav {
+    background: rgba(255, 255, 255, 0.8) !important;
+    color: #111827 !important;
+}
+
+.light-mode a {
+    color: #111827 !important;
+}
+
+.light-mode .text-gray-300 {
+    color: #374151 !important;
+}
+
+.light-mode .text-gray-400 {
+    color: #4b5563 !important;
+}
+
+.light-mode footer {
+    color: #111827 !important;
+}
+
+.light-mode section {
+    background: #ffffff !important;
+}
+
+.light-mode .bg-black\/20 {
+    background: #e5e7eb !important;
+}
+
+.light-mode .bg-black\/30 {
+    background: #f3f4f6 !important;
+}
+
+
     </style>
 </head>
 <!--body is starting from here -->
@@ -53,7 +101,19 @@
         <a href="#contact" class="hover:text-pink-400 transition">Contact</a>
        
     </div>
-    <a href="#" class="bg-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-purple-700 transition">Download CV</a>
+    <!--download cv and the mode changing button here-->
+    <div class="flex items-center space-x-2">
+    <a href="#" class="bg-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-purple-700 transition">
+        Download CV
+    </a>
+
+    <button onclick="toggleMode()" class="text-2xl focus:outline-none">
+        <i id="modeIcon" class="fas fa-moon"></i>
+    </button>
+</div>
+
+  
+
 </nav>
 
 <section class="h-screen flex flex-col justify-center items-center text-center px-4">
@@ -404,6 +464,39 @@
   window.addEventListener('scroll', updateReveal);
   window.addEventListener('resize', updateReveal);
   updateReveal(); // Initial call
+</script>
+
+<!--script for changing the mode of the website to light mode to the dark mode  -->
+
+<script>
+function toggleMode() {
+    const body = document.body;
+    const icon = document.getElementById("modeIcon");
+
+    body.classList.toggle("light-mode");
+
+    if (body.classList.contains("light-mode")) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+        localStorage.setItem("theme", "light");
+    } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+        localStorage.setItem("theme", "dark");
+    }
+}
+
+// Keep theme after refresh
+window.onload = function () {
+    const savedTheme = localStorage.getItem("theme");
+    const icon = document.getElementById("modeIcon");
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+    }
+};
 </script>
 
 </body>
